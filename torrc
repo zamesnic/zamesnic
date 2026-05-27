@@ -34,7 +34,7 @@ DNSPort 127.0.0.1:5000
 HardwareAccel 1
 Schedulers Vanilla
 ClientOnly 1
-VirtualAddrNetworkIPv4 10.192.0.0/10
+VirtualAddrNetworkIPv4 10.10.0.0/10
 MaxCircuitDirtiness 600
 EnforceDistinctSubnets 1
 DormantCanceledByStartup 1
@@ -43,6 +43,8 @@ ClientUseIPv4 1
 ClientUseIPv6 0
 ORPort 9001
 ExtORPort auto
+TrackHostExits example.com
+TrackHostExitsExpire 1000
 
 UseBridges 1
 # в linux
