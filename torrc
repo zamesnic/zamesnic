@@ -7,10 +7,19 @@
 GeoIPFile /data/data/com.termux/files/usr/share/tor/geoip
 GeoIPv6File /data/data/com.termux/files/usr/share/tor/geoip6
 
+# Windows указал geoipfiles
+GeoIPFile C:\tor\var\data\geoip
+GeoIPv6File C:\tor\var\data\geoip6
+
 # Nodes, ip, порты нужно указать свои
 SocksPolicy accept private:*,reject *:*
 HeartbeatPeriod 1 hours
 ExitRelay 0
+
+# В windows укажем паку tor, не в windows не указываем это значение
+DataDirectory C:\tor
+# По желанию поменяем  socks порт, Например 
+SOCKSPort 3019
 
 ExitNodes {NO}, {SK}, {SE}, {CH}, {AU}, {GB}
 StrictExitNodes 1
