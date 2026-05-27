@@ -1,0 +1,49 @@
+### Добавить эти правила в конец файла torrc.
+## В linux обычно находится в /etc/tor/
+## В windows там где установлен tor bundle в папке tor обычно. 
+## В termux .../usr/etc/tor/
+
+## Nodes, ip, порты нужно указать свои
+SocksPolicy accept private:*,reject *:*
+HeartbeatPeriod 1 hours
+ExitRelay 0
+
+ExitNodes {NO}, {SK}, {SE}, {CH}, {AU}, {GB}
+StrictExitNodes 1
+## при использовании мостов Entry Nodes  закоментировать
+#EntryNodes {NO}, {SK}, {SE}, {CH}, {AU}, {GB}
+StrictEntryNodes 1
+ExcludeExitNodes {PA}, {SA}, {HK}, {KW}, {KG}, {LY}, {MY}, {SO}, {SS}, {TJ}, {TM}, {TR}, {UZ}, {YE}, {PS}, {IQ}, {PK}, {ID}, {IN}, {SK}, {SE}, {RU}, {UA}, {BY}, {KZ}, {CN}, {IR}
+StrictNodes 1
+ExcludeNodes {PA}, {SA}, {HK}, {KW}, {KG}, {LY}, {MY}, {SO}, {SS}, {TJ}, {TM}, {TR}, {UZ}, {YE}, {PS}, {IQ}, {PK}, {ID}, {IN}, {SK}, {SE}, {RU}, {UA}, {BY}, {KZ}, {CN}, {IR}
+ConnectionPadding 1
+CircuitPadding 1
+ReducedCircuitPadding 1
+NewCircuitPeriod 30
+PublishServerDescriptor 0
+AvoidDiskWrites 1
+AutomapHostsOnResolve 1
+AutomapHostsSuffixes .exit, .onion
+HttpTunnelPort 127.0.0.1:10001
+
+DNSPort 127.0.0.1:5000
+HardwareAccel 1
+Schedulers Vanilla
+ClientOnly 1
+VirtualAddrNetworkIPv4 10.192.0.0/10
+MaxCircuitDirtiness 600
+EnforceDistinctSubnets 1
+DormantCanceledByStartup 1
+DormantClientTimeout 864
+ClientUseIPv4 1
+ClientUseIPv6 0
+ORPort 9001
+ExtORPort auto
+
+UseBridges 1
+ClientTransportPlugin obfs4 exec /data/data/com.termux/files/usr/bin/obfs4proxy
+
+Bridge obfs4 77.74.85.61:11113 78B739B3C153E6C8447D8C7C37454140663D12A5 cert=mUX7G5fkTbvgQYgeC9q2sWa79Q2kyXh0Hkm/RRVVBDKWFbzm3oqu4+sI76Je8t0N6jC4eA iat-mode=0
+Bridge obfs4 185.177.207.231:11231 662C70B65B4DCADBB622862B28BD56F4BEA22A6A cert=cEiXkalIbHiGUGp2dttVG4t5/IEbtR4Yhqc4UAd5BMJBhkSAduAblFNrcneUC2WSlD39Aw iat-mode=0
+Bridge obfs4 51.79.30.226:35077 6D0268328156594C41B50BF94EBD7CDCFAF985E2 cert=wQ35o1bPKT8CFmg/5C4eKmRMt4O+q6pBuflVe3vscbGS12bb4vwC5BnYepnNf0vgdDrnYQ iat-mode=0
+Bridge obfs4 51.68.237.122:30839 708208F4631469FB59B8957AD3D01F8E3B6FEF7A cert=kDJk2ux6zItpRvs9ugTQqWl1W8pc8vO3PiiRFZ7kcHFghRUphK/2uq4xCnbS7bjBx3VcTw iat-mode=0
