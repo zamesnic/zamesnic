@@ -3,14 +3,18 @@
 ## В windows там где установлен tor bundle в папке tor обычно. 
 ## В termux .../usr/etc/tor/
 
-## Nodes, ip, порты нужно указать свои
+# в termux указал geoipfiles
+GeoIPFile /data/data/com.termux/files/usr/share/tor/geoip
+GeoIPv6File /data/data/com.termux/files/usr/share/tor/geoip6
+
+# Nodes, ip, порты нужно указать свои
 SocksPolicy accept private:*,reject *:*
 HeartbeatPeriod 1 hours
 ExitRelay 0
 
 ExitNodes {NO}, {SK}, {SE}, {CH}, {AU}, {GB}
 StrictExitNodes 1
-## при использовании мостов Entry Nodes  закоментировать
+# при использовании мостов, Entry Nodes  закоментировать
 #EntryNodes {NO}, {SK}, {SE}, {CH}, {AU}, {GB}
 StrictEntryNodes 1
 ExcludeExitNodes {PA}, {SA}, {HK}, {KW}, {KG}, {LY}, {MY}, {SO}, {SS}, {TJ}, {TM}, {TR}, {UZ}, {YE}, {PS}, {IQ}, {PK}, {ID}, {IN}, {SK}, {SE}, {RU}, {UA}, {BY}, {KZ}, {CN}, {IR}
