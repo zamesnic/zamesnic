@@ -45,6 +45,10 @@ ORPort 9001
 ExtORPort auto
 
 UseBridges 1
+# в linux
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+
+# в termux
 ClientTransportPlugin obfs4 exec /data/data/com.termux/files/usr/bin/obfs4proxy
 
 Bridge obfs4 77.74.85.61:11113 78B739B3C153E6C8447D8C7C37454140663D12A5 cert=mUX7G5fkTbvgQYgeC9q2sWa79Q2kyXh0Hkm/RRVVBDKWFbzm3oqu4+sI76Je8t0N6jC4eA iat-mode=0
