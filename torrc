@@ -1,6 +1,6 @@
 ### Добавить эти правила в конец файла torrc.
 ## В linux обычно находится в /etc/tor/
-## В windows там где установлен tor bundle в папке tor обычно. 
+## В windows там где установлен tor bundle в папке c:\tor обычно или c:\tor\var\ если нет его, создаем там. 
 ## В termux .../usr/etc/tor/
 
 # в termux указал geoipfiles
